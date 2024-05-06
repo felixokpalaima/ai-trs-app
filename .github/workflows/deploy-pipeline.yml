@@ -50,8 +50,9 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          echo "IMAGE_TAG=${{ github.sha }}" > /home/ubuntu/deployment/.env
-          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" > /home/ubuntu/deployment/.env
+            echo "IMAGE_TAG=${{ github.sha }}" > /home/ubuntu/deployment/.env
+            echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> /home/ubuntu/deployment/.env
+        
 
     - name: Login to Docker Hub on Server and Deploy Applicaton
       uses: appleboy/ssh-action@master
@@ -65,12 +66,12 @@ jobs:
             echo "Logged in successfully." 
             cd /home/ubuntu/deployment/
             cat .env
-            docker compose -f docker-compose-deploy.yml up -d --scale ai-trs-app=2 --force-recreate
+            docker compose -f docker-compose-deploy.yml up -d --scale app=2 --force-recreate
             sleep 60  
             # Check the health of the service
             if docker compose ps | grep "healthy"; then
               echo "New instances are healthy, scaling down..."
-              docker compose up -d --scale ai-trs-app=1
+              docker compose up -d --scale app=1
             else
               echo "Health checks failed, aborting scale down."
             fi

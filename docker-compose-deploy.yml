@@ -1,6 +1,6 @@
 services:
   app:
-    image: felixokpalaima/ai-trs-app:345d7e485f1f87db67693ffa2c3ffbd9329f27a9
+    image: felixokpalaima/ai-trs-app:${IMAGE_TAG}
     expose: 
       - 3000
     environment:
