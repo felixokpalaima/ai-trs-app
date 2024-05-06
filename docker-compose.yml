@@ -1,10 +1,6 @@
-version: '3.8'
-
-
 services:
   ai-trs-app:
     build: .
-    image: felixokpalaima/ai-trs-app
     # ports: 
     #   - 3000:3000
     environment:
@@ -12,11 +8,11 @@ services:
     restart: unless-stopped
     expose:
       - 3000
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+    #   interval: 30s
+    #   timeout: 10s
+    #   retries: 3
     networks:
       - webnet
 
