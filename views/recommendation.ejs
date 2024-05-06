@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recommendations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .recommendation {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <% if (recommendations && recommendations.length > 0) { %>
+    <% recommendations.forEach(function(rec) { %>
+      <div class="recommendation">
+        <h2><%= rec.suggestion %></h2>
+        <p><strong>Reason:</strong> <%= rec.reason_summary %></p>
+        <p><strong>Accommodation:</strong></p>
+        <ul>
+          <% rec.accommodation.options.forEach(function(option) { %>
+            <li><%= option %></li>
+          <% }); %>
+        </ul>
+        <p>Recommended booking sites:</p>
+        <ul>
+          <% rec.accommodation.sites.forEach(function(site) { %>
+            <li><a href="https://<%= site %>" target="_blank"><%= site %></a></li>
+          <% }); %>
+        </ul>
+        <p><strong>Food Options:</strong></p>
+        <ul>
+          <% rec.food.options.forEach(function(option) { %>
+            <li><%= option %></li>
+          <% }); %>
+        </ul>
+        <p>Food-related sites:</p>
+        <ul>
+          <% rec.food.sites.forEach(function(site) { %>
+            <li><a href="https://<%= site %>" target="_blank"><%= site %></a></li>
+          <% }); %>
+        </ul>
+        <p><strong>Flight Information:</strong></p>
+        <ul>
+          <% rec.flight.options.forEach(function(option) { %>
+            <li><%= option %></li>
+          <% }); %>
+        </ul>
+        <p>Flight booking sites:</p>
+        <ul>
+          <% rec.flight.sites.forEach(function(site) { %>
+            <li><a href="https://<%= site %>" target="_blank"><%= site %></a></li>
+          <% }); %>
+        </ul>
+        <p><strong>Weather:</strong> <%= rec.weather %></p>
+        <p><strong>Local Transportation Options:</strong></p>
+        <ul>
+          <% rec.local_transportation_options.options.forEach(function(option) { %>
+            <li><%= option %></li>
+          <% }); %>
+        </ul>
+        <p><strong>Visa Requirements:</strong> <%= rec.visa_requirements %></p>
+        <p><strong>Additional Information:</strong> <%= rec.additional_info %></p>
+      </div>
+    <% }); %>
+  <% } else { %>
+    <p>No recommendations found.</p>
+  <% } %>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!-- Data Collection Form -->
+<div class="form-section" id="formSection">
+  <form id="travelForm">
+      <!-- Basic Information -->
+      <fieldset>
+          <legend>Basic Information</legend>
+          <label for="desiredDestination">Desired Destination:</label>
+          <input type="text" id="desiredDestination" name="desiredDestination" placeholder="Greece" required>
+
+          <label for="travelCountryFlexibility">Travel Country Flexibility:</label>
+          <select id="travelCountryFlexibility" name="travelCountryFlexibility">
+              <option value="Fixed" checked>Fixed</option>
+              <option value="Flexible within continient">Flexible within continent</option>
+              <option value="Flexible the whole world">Flexible the whole world</option>
+          </select>
+
+          <label for="travelDates">Travel Dates:</label>
+          <input type="text" id="travelDates" name="travelDates" placeholder="2024-03-15 to 2024-03-30" required>
+
+          <label for="travelDateFlexibility">Travel Date Flexibility:</label>
+          <select id="travelDateFlexibility" name="travelDateFlexibility">
+              <option value="Fixed">Fixed</option>
+              <option value="Flexible within a week">Flexible within a week</option>
+              <option value="Flexible within a month">Flexible within a month</option>
+          </select>
+
+          <label for="tripDuration">Trip Duration (days):</label>
+          <input type="number" id="tripDuration" name="tripDuration" placeholder="15" required>
+
+          <label for="countryOfResidence">Country of Residence:</label>
+          <input type="text" id="countryOfResidence" name="countryOfResidence" placeholder="Nigeria" required>
+      </fieldset>
+
+      <!-- Budget and Accommodation -->
+      <fieldset>
+          <legend>Budget and Accommodation</legend>
+          <label for="currency">Currency:</label>
+          <select id="currency" name="currency">
+              <option value="NGN">NGN</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+          </select>
+
+          <label for="budgetRange">Budget Range:</label>
+          <input type="text" id="budgetRange" name="budgetRange" placeholder="2500-3500" required>
+
+          <label for="accommodationType">Accommodation Type:</label>
+          <select id="accommodationType" name="accommodationType">
+              <option value="Hotel">Hotel</option>
+              <option value="Hostel">Hostel</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Resort">Resort</option>
+          </select>
+
+          <label for="accommodationAmenities">Accommodation Amenities:</label>
+          <input type="checkbox" id="wifi" name="accommodationAmenities" value="Wi-Fi">
+          <label for="wifi">Wi-Fi</label>
+          <input type="checkbox" id="kitchen" name="accommodationAmenities" value="Kitchen">
+          <label for="kitchen">Kitchen</label>
+          <input type="checkbox" id="parking" name="accommodationAmenities" value="Parking">
+          <label for="parking">Parking</label>
+
+      </fieldset>
+
+      <!-- Travel Companions -->
+      <fieldset>
+          <legend>Travel Companions</legend>
+          <label for="companionType">Companion Type:</label>
+          <select id="companionType" name="companionType">
+              <option value="Alone">Alone</option>
+              <option value="Partner">Partner</option>
+              <option value="Family">Family</option>
+              <option value="Friends">Friends</option>
+          </select>
+
+          <label for="numberOfChildren">Number of Children:</label>
+          <input type="number" id="numberOfChildren" name="numberOfChildren" placeholder=2>
+
+          <label for="specialNeeds">Special Needs:</label>
+          <input type="text" id="specialNeeds" name="specialNeeds" placeholder="Near public parks" required>
+      </fieldset>
+
+      <fieldset>
+          <legend>Activities and Interests</legend>
+          <label for="activitiesInterestedIn">Activities Interested In:</label>
+          <input type="text" id="activitiesInterestedIn" name="activitiesInterestedIn">
+
+          <label for="specificLandmarks">Specific Landmarks:</label>
+          <input type="text" id="specificLandmarks" name="specificLandmarks">
+
+          <label for="activityVsRelaxationTime">Activity vs Relaxation Time:</label>
+          <select id="activityVsRelaxationTime" name="activityVsRelaxationTime">
+              <option value="Mostly activities">Mostly activities</option>
+              <option value="Balanced">Balanced</option>
+              <option value="Mostly relaxation">Mostly relaxation</option>
+          </select>
+      </fieldset>
+
+      <!-- Travel Preferences -->
+      <fieldset>
+          <legend>Travel Preferences</legend>
+          <label for="preferredTransportation">Preferred Transportation:</label>
+          <input type="checkbox" id="train" name="preferredTransportation" value="Train">
+          <label for="train">Train</label>
+          <input type="checkbox" id="carHire" name="preferredTransportation" value="Car Hire">
+          <label for="carHire">Car Hire</label>
+          <input type="checkbox" id="rideHailing" name="preferredTransportation" value="Ride Hailing">
+          <label for="rideHailing">Ride Hailing</label>
+          <input type="checkbox" id="publicTransport" name="preferredTransportation" value="Public Transport">
+          <label for="publicTransport">Public Transport</label>
+          <input type="checkbox" id="biking" name="preferredTransportation" value="Biking">
+          <label for="biking">Biking</label>
+          <input type="checkbox" id="walking" name="preferredTransportation" value="Walking">
+          <label for="walking">Walking</label>
+
+          <label for="mealPreference">Meal Preference:</label>
+          <select id="mealPreference" name="mealPreference">
+              <option value="Local Cuisine">Local Cuisine</option>
+              <option value="Continental">Continental</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Vegan">Vegan</option>
+              <option value="No Preference">No Preference</option>
+          </select>
+
+          <label for="specificDietaryNeeds">Specific Dietary Needs:</label>
+          <input type="text" id="specificDietaryNeeds" name="specificDietaryNeeds">
+
+          <label for="destinationType">Destination Type:</label>
+          <select id="destinationType" name="destinationType">
+              <option value="Off-the-beaten-path">Off-the-beaten-path</option>
+              <option value="Popular tourist spots">Popular tourist spots</option>
+          </select>
+
+          <label for="preferLocal">Prefer Local:</label>
+          <input type="checkbox" id="preferLocal" name="preferLocal">
+
+          <label for="interestedInCulturalActivities">Interested in Cultural Activities:</label>
+          <input type="checkbox" id="interestedInCulturalActivities" name="interestedInCulturalActivities">
+
+          <label for="preferredTransportation">Continental Preferences:</label>
+          <input type="checkbox" id="tsian" name="continentalPreferences" value="Asian">
+          <label for="tsian">Asian</label>
+          <input type="checkbox" id="european" name="continentalPreferences" value="European">
+          <label for="european">European</label>
+          <input type="checkbox" id="african" name="continentalPreferences" value="African">
+          <label for="african">African</label>
+          <input type="checkbox" id="american" name="continentalPreferences" value="American">
+          <label for="american">American</label>
+          <input type="checkbox" id="australian" name="continentalPreferences" value="Australian">
+          <label for="ustralian">Australian</label>
+      </fieldset>
+
+      <!-- Health and Safety -->
+      <fieldset>
+          <legend>Health and Safety</legend>
+          <label for="healthConcerns">Health Concerns:</label>
+          <input type="text" id="healthConcerns" name="healthConcerns">
+
+          <label for="healthcareAccessLevel">Healthcare Access Level:</label>
+          <select id="healthcareAccessLevel" name="healthcareAccessLevel">
+              <option value="Basic">Basic</option>
+              <option value="Moderate">Moderate</option>
+              <option value="High">High</option>
+          </select>
+
+          <label for="safetyConcerns">Safety Concerns:</label>
+          <input type="text" id="safetyConcerns" name="safetyConcerns">
+      </fieldset>
+
+      <!-- Environmental and Cultural -->
+      <fieldset>
+          <legend>Environmental and Cultural</legend>
+          <label for="sustainabilityImportance">Sustainability Importance:</label>
+          <input type="checkbox" id="sustainabilityImportance" name="sustainabilityImportance">
+
+          <label for="culturalImmersionInterest">Cultural Immersion Interest:</label>
+          <input type="checkbox" id="culturalImmersionInterest" name="culturalImmersionInterest">
+
+          <label for="languagePreferences">Language Preferences:</label>
+          <input type="text" id="languagePreferences" name="languagePreferences" placeholder="Please enter languages separeted by comma">
+
+      </fieldset>
+
+      <!-- Miscellaneous -->
+      <fieldset>
+          <legend>Miscellaneous</legend>
+          <label for="internetConnectivityImportance">Internet Connectivity Importance:</label>
+          <input type="checkbox" id="internetConnectivityImportance" name="internetConnectivityImportance">
+
+          <label for="loyaltyPrograms">Loyalty Programs:</label>
+          <input type="text" id="loyaltyPrograms" name="loyaltyPrograms" placeholder="please enter programs separeted by comma">
+
+          <label for="specificRequirements">Specific Requirements:</label>
+          <input type="text" id="specificRequirements" name="specificRequirements">
+      </fieldset>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Get my recommendations</button>
+       <span id="loadingText" style="display:none;"></span>
+  </form>
+</div>

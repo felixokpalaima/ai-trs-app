@@ -1,0 +1,17 @@
+<div class="recommendations-section">
+  <% if (recommendations.length > 0) { %>
+      <% recommendations.forEach(function(rec) { %>
+          <div class="grid-item">
+              <h2><%= rec.suggestion %></h2>
+              <p><%= rec.reason_summary %></p>
+              <ul>
+                  <% rec.accommodation.options.forEach(function(option) { %>
+                      <li><%= option %></li>
+                  <% }); %>
+              </ul>
+          </div>
+      <% }); %>
+  <% } else { %>
+    <p> Your AI powered recommendations will be shown here. . .</p>
+<% } %>
+</div>

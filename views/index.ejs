@@ -1,0 +1,11 @@
+<%- include('header') %>
+<%- include('banner') %>
+<%- include('main') %>
+
+<div class="form-grid">
+  <%- include('form') %>
+  <div class="recommendations-section">
+    <%- include('partials/recommendations', { recommendations: recommendations }) %>
+</div>
+</div>
+<%- include('footer') %>
