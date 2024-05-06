@@ -67,11 +67,11 @@ jobs:
             cd /home/ubuntu/deployment/
             cat .env
             docker compose -f docker-compose-deploy.yml up -d --scale app=2 --force-recreate
-            sleep 60  
+            sleep 120  
             # Check the health of the service
             if docker compose ps | grep "healthy"; then
               echo "New instances are healthy, scaling down..."
-              docker compose up -d --scale app=1
+              docker compose -f docker-compose-deploy.yml up -d --scale app=1
             else
               echo "Health checks failed, aborting scale down."
             fi
