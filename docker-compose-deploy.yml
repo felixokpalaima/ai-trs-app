@@ -1,7 +1,8 @@
 services:
-  ai-trs-app:
-    image: felixokpalaima/ai-trs-app:${IMAGE_TAG}
-    expose: 3000
+  app:
+    image: felixokpalaima/ai-trs-app:345d7e485f1f87db67693ffa2c3ffbd9329f27a9
+    expose: 
+      - 3000
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - IMAGE_TAG=${IMAGE_TAG}
