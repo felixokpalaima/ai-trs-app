@@ -2,6 +2,7 @@ FROM node:16-alpine3.18
 
 WORKDIR /usr/src/app
 
+# Install curl to be used during healthcheck
 RUN apk update && \
     apk add --no-cache curl
 
