@@ -2,12 +2,12 @@ FROM node:16-alpine3.18
 
 WORKDIR /usr/src/app
 
-# Mount the secret file, read it, and use it without leaving it in the image layer
-# RUN --mount=type=secret,id=OPENAI_API_KEY \
-#     OPENAI_API_KEY=$(cat /run/secrets/OPENAI_API_KEY) && \
-#     echo "The API key is secured but not exposed in the image"
+RUN apk update && \
+    apk add --no-cache curl
 
 COPY package*.json ./
+
+RUN apt-get update && apt-get install -y curl
 
 RUN npm install
 
